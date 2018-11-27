@@ -20,11 +20,16 @@ public class HTTPClient1
         InputStream in = sock.getInputStream();
         OutputStream out = sock.getOutputStream();
 
-        String CRLF = "\r\n";
+        String CRLF = "\r\n"; //indica fim de linha(separador de linha)
         
-        String msg = "GET / HTTP/1.1" + CRLF +
+        String msg = "HEAD /~catto/ HTTP/1.1" + CRLF +
                      "Host: www.ic.unicamp.br" + CRLF +
                      CRLF;
+                     
+        /*String msg = "GET / HTTP/1.1" + CRLF +
+                     "Host: www.ic.unicamp.br" + CRLF +
+                     CRLF;*/
+
 
         // Envio da requisição HTTP             
         out.write(msg.getBytes());
